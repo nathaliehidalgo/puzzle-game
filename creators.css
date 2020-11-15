@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+body {
+  background-image: linear-gradient(to bottom right, #98f951, #db4a64);
+  overflow: hidden;
+}
+.creadores {
+  position: relative;
+  margin-top: 50%;
+  margin-left: 1%;
+  text-align: center;
+  color: #000000;
+  animation-name: example;
+  animation-duration: 7s;
+  animation-fill-mode: forwards;
+  font-family: "Press Start 2P", cursive;
+}
+
+.creadores h1 {
+  padding-bottom: 2%;
+  font-size: 3.2rem;
+}
+
+.fox {
+  bottom: 85%;
+  position: absolute;
+  left: 40%;
+  height: 150%;
+}
+
+.animation-area {
+  background: linear-gradient(to left, #8942a8, #ba382f);
+  width: 100;
+  height: 100vh;
+}
+.box-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.box-area li {
+  position: absolute;
+  display: block;
+  life-style: none;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 20s linear infinite;
+  bottom: -150px;
+}
+.box-area li:nth-child(2) {
+  left: 12%;
+  width: 30px;
+  height: 30px;
+  animation-delay: 1.5s;
+  animation-duration: 15s;
+}
+.box-area li:nth-child(3) {
+  left: 70%;
+  width: 100px;
+  height: 100px;
+  animation-delay: 1.5s;
+}
+.box-area li:nth-child(4) {
+  left: 42%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 15s;
+}
+.box-area li:nth-child(5) {
+  left: 65%;
+  width: 40px;
+  height: 40px;
+  animation-delay: 0s;
+}
+.box-area li:nth-child(6) {
+  left: 15%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3.5s;
+}
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes example {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: 500px;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Puzzle Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="jquery.jqpuzzle.full.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="jquery.jqpuzzle.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="lvl2.css" />
+    <script type="text/javascript" src="main2.js"></script>
+  </head>
+  <body>
+    <script src="jungle2.js"></script>
+    <h2 id="lvltext">¡Puzzle nivel 2!</h2>
+    <img class="elephant" src="img/elephant.gif" />
+
+    <div id="puzzleContainer">
+      <img
+        id="puzzleImage"
+        src="img/image11.jpg"
+        alt="Puzzle"
+        class="customPuzzle"
+      />
+      <button class="box" type="button" onclick="onPuzzleCompleted()">
+        AYUDA
+      </button>
+    </div>
+  </body>
+</html>
