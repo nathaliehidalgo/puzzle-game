@@ -1,0 +1,1039 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@media screen and (min-width: 1200px) {
+  body {
+    background: deepskyblue;
+    /*background: linear-gradient(20deg, royalblue, deepskyblue, #00cadf);*/
+    overflow: hidden;
+  }
+
+  #instructionContainer {
+    margin-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #speech-bubble {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+  }
+
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+  }
+
+  #btn {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    padding: 8px;
+    border: 1px outset #000000;
+    background-color: #ff971b;
+    color: #000000;
+    outline: none;
+    font-size: 1rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+
+  .fish {
+    display: inline-block;
+    height: 230px;
+    margin-bottom: -220px;
+    z-index: 10;
+  }
+
+  p {
+    min-width: 25px;
+    display: inline-block;
+    margin: 0;
+    font-size: 1.2em;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #guide {
+    margin-top: 115px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-align: center;
+    font-size: 4.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  p:empty:before {
+    content: "Inspired by the awesome NES.css";
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  p:empty:focus:before {
+    content: "";
+    width: 25px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid #000;
+  }
+
+  p:focus {
+    outline: none;
+    caret-color: transparent;
+  }
+
+  .seaweed1 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in-out infinite;
+    animation: swim 7s ease-in-out infinite;
+    bottom: -3px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .seaweed2 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in infinite;
+    animation: swim 7s ease-in infinite;
+    bottom: -3px;
+    z-index: 15;
+    pointer-events: none;
+  }
+  .seaweed3 {
+    position: absolute;
+    -webkit-animation: swim 6s linear infinite;
+    animation: swim 6s linear infinite;
+    bottom: -3px;
+    z-index: 5;
+    pointer-events: none;
+  }
+  .seaweed4 {
+    position: absolute;
+    animation-delay: -5s;
+    -webkit-animation: swim 7s ease-out infinite;
+    animation: swim 7s ease-out infinite;
+    bottom: -3px;
+    z-index: 15;
+    pointer-events: none;
+  }
+
+  .eightbit-btn {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    display: none;
+    background: #92cd41;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4aa52e;
+    z-index: 5;
+  }
+  .eightbit-btn:hover,
+  .eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:before,
+  .eightbit-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+  .eightbit-btn:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+  .eightbit-btn:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+
+  #ready {
+    position: absolute;
+    font-family: "Press Start 2P", cursive;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: none;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  body {
+    background: deepskyblue;
+    /*background: linear-gradient(20deg, royalblue, deepskyblue, #00cadf);*/
+    overflow: hidden;
+  }
+
+  #instructionContainer {
+    margin-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #speech-bubble {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    margin-right: 22px;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+  }
+
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+  }
+
+  #btn {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    padding: 8px;
+    border: 1px outset #000000;
+    background-color: #ff971b;
+    color: #000000;
+    outline: none;
+    font-size: 0.8rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+
+  .fish {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+    margin-bottom: -220px;
+    z-index: 10;
+  }
+
+  p {
+    min-width: 25px;
+    display: inline-block;
+    margin: 0;
+    font-size: 1em;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #guide {
+    margin-top: 115px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-align: center;
+    font-size: 3.5rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  p:empty:before {
+    content: "Inspired by the awesome NES.css";
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  p:empty:focus:before {
+    content: "";
+    width: 25px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid #000;
+  }
+
+  p:focus {
+    outline: none;
+    caret-color: transparent;
+  }
+
+  .seaweed1 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in-out infinite;
+    animation: swim 7s ease-in-out infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 240px;
+    pointer-events: none;
+  }
+  .seaweed2 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in infinite;
+    animation: swim 7s ease-in infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 240px;
+    pointer-events: none;
+  }
+  .seaweed3 {
+    position: absolute;
+    -webkit-animation: swim 6s linear infinite;
+    animation: swim 6s linear infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 240px;
+    pointer-events: none;
+  }
+  .seaweed4 {
+    position: absolute;
+    animation-delay: -5s;
+    -webkit-animation: swim 7s ease-out infinite;
+    animation: swim 7s ease-out infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 240px;
+    pointer-events: none;
+  }
+
+  .eightbit-btn {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    display: none;
+    background: #92cd41;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 25px;
+    padding: 15px;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4aa52e;
+    z-index: 5;
+  }
+  .eightbit-btn:hover,
+  .eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:before,
+  .eightbit-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+  .eightbit-btn:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+  .eightbit-btn:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+
+  #ready {
+    position: absolute;
+    font-family: "Press Start 2P", cursive;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: none;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 540px) {
+  body {
+    background: deepskyblue;
+    /*background: linear-gradient(20deg, royalblue, deepskyblue, #00cadf);*/
+    overflow: hidden;
+  }
+
+  #instructionContainer {
+    margin-top: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #speech-bubble {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 13px;
+    display: inline-block;
+    position: relative;
+    margin-left: -45px;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+  }
+
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+  }
+
+  #btn {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    padding: 7px;
+    border: 1px outset #000000;
+    background-color: #ff971b;
+    color: #000000;
+    outline: none;
+    font-size: 0.7rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+
+  .fish {
+    position: relative;
+    display: inline-block;
+    height: 160px;
+    margin-bottom: -220px;
+    z-index: 10;
+  }
+
+  p {
+    min-width: 25px;
+    display: inline-block;
+    margin: 0;
+    font-size: 0.8em;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #guide {
+    margin-top: 115px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-align: center;
+    font-size: 2.3rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  p:empty:before {
+    content: "Inspired by the awesome NES.css";
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  p:empty:focus:before {
+    content: "";
+    width: 25px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid #000;
+  }
+
+  p:focus {
+    outline: none;
+    caret-color: transparent;
+  }
+
+  .seaweed1 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in-out infinite;
+    animation: swim 7s ease-in-out infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed2 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in infinite;
+    animation: swim 7s ease-in infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed3 {
+    position: absolute;
+    -webkit-animation: swim 6s linear infinite;
+    animation: swim 6s linear infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed4 {
+    position: absolute;
+    animation-delay: -5s;
+    -webkit-animation: swim 7s ease-out infinite;
+    animation: swim 7s ease-out infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+
+  .eightbit-btn {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    display: none;
+    background: #92cd41;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4aa52e;
+    z-index: 5;
+  }
+  .eightbit-btn:hover,
+  .eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:before,
+  .eightbit-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+  .eightbit-btn:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+  .eightbit-btn:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+
+  #ready {
+    position: absolute;
+    font-family: "Press Start 2P", cursive;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: none;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 539px) and (min-width: 321px) {
+  body {
+    background: deepskyblue;
+    /*background: linear-gradient(20deg, royalblue, deepskyblue, #00cadf);*/
+    overflow: hidden;
+  }
+
+  #instructionContainer {
+    margin-top: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #speech-bubble {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 13px;
+    display: inline-block;
+    position: relative;
+    margin-left: -80px;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+  }
+
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+  }
+
+  #btn {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    padding: 5px;
+    border: 1px outset #000000;
+    background-color: #ff971b;
+    color: #000000;
+    outline: none;
+    font-size: 0.6rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+
+  .fish {
+    position: relative;
+    display: inline-block;
+    height: 115px;
+    margin-bottom: -220px;
+    z-index: 10;
+  }
+
+  p {
+    min-width: 25px;
+    display: inline-block;
+    margin: 0;
+    font-size: 0.6em;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #guide {
+    margin-top: 115px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  p:empty:before {
+    content: "Inspired by the awesome NES.css";
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  p:empty:focus:before {
+    content: "";
+    width: 25px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid #000;
+  }
+
+  p:focus {
+    outline: none;
+    caret-color: transparent;
+  }
+
+  .seaweed1 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in-out infinite;
+    animation: swim 7s ease-in-out infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed2 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in infinite;
+    animation: swim 7s ease-in infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed3 {
+    position: absolute;
+    -webkit-animation: swim 6s linear infinite;
+    animation: swim 6s linear infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed4 {
+    position: absolute;
+    animation-delay: -5s;
+    -webkit-animation: swim 7s ease-out infinite;
+    animation: swim 7s ease-out infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+
+  .eightbit-btn {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    display: none;
+    background: #92cd41;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4aa52e;
+    z-index: 5;
+  }
+  .eightbit-btn:hover,
+  .eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:before,
+  .eightbit-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+  .eightbit-btn:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+  .eightbit-btn:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+
+  #ready {
+    position: absolute;
+    font-family: "Press Start 2P", cursive;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: none;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 320px) {
+  body {
+    background: deepskyblue;
+    /*background: linear-gradient(20deg, royalblue, deepskyblue, #00cadf);*/
+    overflow: hidden;
+  }
+
+  #instructionContainer {
+    margin-top: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  #speech-bubble {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 13px;
+    display: inline-block;
+    position: relative;
+    margin-left: -80px;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+  }
+
+  #speech-bubble:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+  }
+
+  #btn {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    cursor: pointer;
+    font-family: "Press Start 2P", cursive;
+    padding: 5px;
+    border: 1px outset #000000;
+    background-color: #ff971b;
+    color: #000000;
+    outline: none;
+    font-size: 0.6rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+
+  .fish {
+    position: relative;
+    display: inline-block;
+    height: 115px;
+    margin-bottom: -220px;
+    z-index: 10;
+  }
+
+  p {
+    min-width: 25px;
+    display: inline-block;
+    margin: 0;
+    font-size: 0.6em;
+    font-family: "Press Start 2P", cursive;
+    line-height: 1.5em;
+    position: relative;
+  }
+
+  #guide {
+    margin-top: 115px;
+    font-family: "Press Start 2P", cursive;
+    color: #000;
+    text-align: center;
+    font-size: 1.4rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  p:empty:before {
+    content: "Inspired by the awesome NES.css";
+    color: #555;
+    border: 1px solid #ccc;
+  }
+
+  p:empty:focus:before {
+    content: "";
+    width: 25px;
+    height: 1em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-bottom: 5px solid #000;
+  }
+
+  p:focus {
+    outline: none;
+    caret-color: transparent;
+  }
+
+  .seaweed1 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in-out infinite;
+    animation: swim 7s ease-in-out infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed2 {
+    position: absolute;
+    -webkit-animation: swim 7s ease-in infinite;
+    animation: swim 7s ease-in infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed3 {
+    position: absolute;
+    -webkit-animation: swim 6s linear infinite;
+    animation: swim 6s linear infinite;
+    bottom: -3px;
+    z-index: 5;
+    height: 200px;
+    pointer-events: none;
+  }
+  .seaweed4 {
+    position: absolute;
+    animation-delay: -5s;
+    -webkit-animation: swim 7s ease-out infinite;
+    animation: swim 7s ease-out infinite;
+    bottom: -3px;
+    z-index: 15;
+    height: 200px;
+    pointer-events: none;
+  }
+
+  .eightbit-btn {
+    margin-left: 8vw;
+    margin-right: 8vw;
+    margin-top: 10vh;
+    margin-bottom: 2vh;
+    display: none;
+    background: #92cd41;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-size: 11px;
+    padding: 9px;
+    font-family: "Press Start 2P", cursive;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset -4px -4px 0px 0px #4aa52e;
+    z-index: 5;
+  }
+  .eightbit-btn:hover,
+  .eightbit-btn:focus {
+    background: #76c442;
+    box-shadow: inset -6px -6px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:active {
+    box-shadow: inset 4px 4px 0px 0px #4aa52e;
+  }
+  .eightbit-btn:before,
+  .eightbit-btn:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: content-box;
+  }
+  .eightbit-btn:before {
+    top: -6px;
+    left: 0;
+    border-top: 6px black solid;
+    border-bottom: 6px black solid;
+  }
+  .eightbit-btn:after {
+    left: -6px;
+    top: 0;
+    border-left: 6px black solid;
+    border-right: 6px black solid;
+  }
+
+  #ready {
+    position: absolute;
+    font-family: "Press Start 2P", cursive;
+    margin-top: 4%;
+    margin-left: 8%;
+    display: none;
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes swim {
+  from {
+    -webkit-transform: translateX(115vw) translateZ(100px);
+    transform: translateX(115vw) translateZ(100px);
+  }
+  to {
+    -webkit-transform: translateX(-15vw) translateZ(100px);
+    transform: translateX(-15vw) translateZ(100px);
+  }
+}

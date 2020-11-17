@@ -10,11 +10,14 @@
       rel="stylesheet"
     />
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" media="screen" href="final.css" />
-    <script src="main4.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/final.css"
+    />
   </head>
   <body>
-    <h2 id="lvltext" class="congrats">¡Felicidades!</h2>
     <div class="container">
       <div class="confetti"></div>
       <div class="confetti"></div>
@@ -32,8 +35,12 @@
       <div class="confetti"></div>
       <div class="confetti"></div>
     </div>
-    <img class="hippo" src="img/hippo.gif" />
-    <h4 class="txtcompleted">¡Has completado todos los niveles!</h4>
+    <div id="winnerContainer">
+      <img class="hippo" src="img/hippo.gif" />
+      <h2 id="lvltext" class="congrats">¡Felicidades!</h2>
+      <h4 class="txtcompleted">¡Has completado todos los niveles!</h4>
+    </div>
+
     <div class="curtain">
       <div class="curtain__wrapper">
         <input type="checkbox" checked />

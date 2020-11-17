@@ -2,8 +2,8 @@ var subLevel = 0;
 
 var mySettings = {
   shuffle: true,
-  rows: 4,
-  cols: 4,
+  rows: 5,
+  cols: 5,
   control: {
     shufflePieces: true, // display 'Shuffle' button [true|false]
     confirmShuffle: true, // ask before shuffling [true|false]
@@ -38,15 +38,18 @@ $(document).ready(function () {
 });
 
 function onLevelFinished() {
-  location.href = "game_lvl_3.html";
+  location.href = "final.html";
 }
 
 function onPuzzleCompleted() {
   subLevel++;
   if (subLevel > 4) {
-    $("#puzzleContainer").append(
-      '<button id="completed" onClick="onLevelFinished()"> ¡Siguiente Nivel! </button>'
-    );
+    var completedButton = document.getElementById("completed");
+    if (completedButton == null) {
+      $("#levelButtons").append(
+        '<button id="completed" onClick="onLevelFinished()"> ¡Finalizar! </button>'
+      );
+    }
   } else {
     getNextPuzzle(subLevel);
   }
@@ -82,12 +85,12 @@ function getNextPuzzle(subLevel) {
       // jsonObj variable now contains the data structure and can
       // be accessed as jsonObj.name and jsonObj.country.
 
-      var nextImage = jsonObj.level2[subLevel].image;
+      var nextImage = jsonObj.level3[subLevel].image;
 
-      $("#puzzleContainer").prepend(
+      $("#levelContainer").append(
         '<img id="puzzleImage" src="' +
           nextImage +
-          '" alt="Puzzle" class="customPuzzle" />'
+          '" alt="Puzzle" class="customPuzzle jqPuzzle" />'
       );
       $(".customPuzzle").jqPuzzle(mySettings, myTexts);
     }

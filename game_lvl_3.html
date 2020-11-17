@@ -7,32 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-    <script type="text/javascript" src="jquery.jqpuzzle.full.js"></script>
-    <link rel="stylesheet" type="text/css" href="jquery.jqpuzzle.css" />
+    <script type="text/javascript" src="js/jquery.jqpuzzle.full.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.jqpuzzle.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Press+Start+2P"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" media="screen" href="lvl3.css" />
-    <script type="text/javascript" src="main3.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/lvl1.css" />
+    <script type="text/javascript" src="js/main3.js"></script>
   </head>
   <body>
-    <script src="jungle2.js"></script>
-    <h2 id="lvltext">¡Puzzle nivel 3!</h2>
-    <img class="crocodile" src="img/crocodile.gif" />
+    <script src="js/jungle2.js"></script>
 
-    <div id="puzzleContainer">
+    <div id="levelContainer">
+      <div id="messageContainer">
+        <img class="crocodile" src="img/crocodile.gif" />
+        <h2 id="lvltext">¡Puzzle nivel <br />3!</h2>
+      </div>
+
       <img
         id="puzzleImage"
         src="img/image21.jpg"
         alt="Puzzle"
-        class="customPuzzle"
+        class="customPuzzle jqPuzzle"
       />
     </div>
 
-    <button class="box" type="button" onclick="onPuzzleCompleted()">
-      AYUDA
-    </button>
+    <div id="levelButtons">
+      <button class="box" type="button" onclick="onPuzzleCompleted()">
+        AYUDA
+      </button>
+    </div>
+    <div id="smallTitle">
+      <h3>
+        ¡Puzzle <br />
+        nivel 1!
+      </h3>
+    </div>
   </body>
 </html>

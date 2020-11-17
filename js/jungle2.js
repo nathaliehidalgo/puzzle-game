@@ -143,6 +143,7 @@ let canvas = document.createElement("canvas"),
   ctx = canvas.getContext("2d"),
   W,
   H;
+canvas.setAttribute("id", "canvas");
 canvas.style.position = "fixed";
 
 document.body.appendChild(canvas);

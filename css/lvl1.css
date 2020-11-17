@@ -1,0 +1,1310 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+@media screen and (min-width: 1200px) {
+  #smallTitle {
+    display: none;
+  }
+  #levelContainer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 210px;
+    position: absolute;
+    margin-right: 20px;
+  }
+
+  #puzzleImage {
+    display: inline-block;
+    position: relative;
+    margin-left: 40px;
+  }
+  /*************************Image and level text*******************/
+  #messageContainer {
+    margin-top: 5px;
+    vertical-align: top;
+    display: inline-block;
+  }
+  #lvltext {
+    max-width: 60%;
+    height: auto;
+    background-color: #fff;
+    padding: 25px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 1.5rem;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+    pointer-events: none;
+  }
+
+  #lvltext:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+    pointer-events: none;
+  }
+
+  .squirrel {
+    display: inline-block;
+    height: 160px;
+    pointer-events: none;
+    margin-top: 280px;
+  }
+
+  .elephant {
+    display: inline-block;
+    height: 165px;
+    margin-top: 280px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .crocodile {
+    display: inline-block;
+    height: 270px;
+    margin-top: 280px;
+    pointer-events: none;
+  }
+  /************************************************************************/
+
+  .jqPuzzle {
+    padding: 15px;
+    border: 1px solid #9a90ff;
+    background-color: #9a90ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    box-shadow: 0 -30px 0 -10px #9a90ff, 0 30px 0 -10px #9a90ff,
+      0 -60px 0 -20px #9a90ff, 0 60px 0 -20px #9a90ff, 0 -90px 0 -40px #9a90ff,
+      0 90px 0 -40px #9a90ff, 0 -120px 0 -60px #9a90ff, 0 120px 0 -60px #9a90ff,
+      -10px 0 0 0 #000000, 10px 0 0 0 #000000, 0 -20px 0 0 #000000,
+      0 20px 0 0 #000000, 0 -50px 0 -10px #000000, 0 50px 0 -10px #000000,
+      0 -70px 0 -20px #000000, 0 70px 0 -20px #000000, 0 -100px 0 -40px #000000,
+      0 100px 0 -40px #000000, 0 -130px 0 -60px #000000, 0 130px 0 -60px #000000;
+  }
+
+  /* only needed if external css rules set defaults for divs,
+   this rule only resets the most common properties */
+  .jqPuzzle div {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+  }
+
+  /* div wrapper which holds the puzzle pieces and the solution image */
+  .jqPuzzle .jqp-wrapper {
+    padding: 4px;
+    border: px solid #000000;
+    background-color: #6b6b6b;
+  }
+
+  /* a single puzzle piece */
+  .jqPuzzle .jqp-piece {
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 28px;
+  }
+
+  .jqPuzzle .jqp-piece:hover {
+    border-style: dashed;
+  }
+
+  .jqPuzzle.jqp-solved .jqp-piece:hover {
+    border-style: solid;
+  }
+
+  /* the controls area which holds the buttons and the display */
+  .jqPuzzle .jqp-controls {
+    float: left;
+  }
+
+  /* a button */
+  .jqPuzzle .jqp-controls a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border: 1px outset #000000;
+    background-color: #ff6b96;
+    color: #000000;
+    font-size: 14px;
+    line-height: normal;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  .jqPuzzle .jqp-controls a:hover {
+    background-color: #ffbdd0;
+    color: #000000;
+  }
+
+  /* toggle/down state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-toggle,
+  .jqPuzzle .jqp-controls a.jqp-down {
+    padding-left: 4px;
+    padding-right: 6px;
+    border-style: inset;
+    background-color: #ffdae5;
+  }
+
+  /* disabled state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-disabled {
+    background-color: #ddddee;
+    color: #ffffff;
+  }
+
+  /* the area which holds the moves/seconds display */
+  .jqPuzzle .jqp-controls span {
+    margin-top: 55px;
+    padding-left: 60px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* disabled state for the display (non-shuffled puzzle) */
+  .jqPuzzle .jqp-controls span.jqp-disabled {
+    color: #aaaaaa;
+  }
+
+  /* solved state for the display (non-shuffled puzzle) */
+  .jqPuzzle.jqp-solved .jqp-controls span {
+    padding: 1px 3px;
+    margin-left: 15%;
+    border: 1px dotted #0f8f08;
+    background-color: #9fef86;
+    color: #0f8f08;
+  }
+
+  /* a text field for the moves/seconds display */
+  .jqPuzzle .jqp-controls span input {
+    margin: 0px 3px;
+    padding: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  /* disabled state for the text fields */
+  .jqPuzzle .jqp-controls span.jqp-disabled input {
+    background-color: #eeeeff;
+    color: #aaaaaa;
+  }
+
+  /* solved state for the text fields */
+  .jqPuzzle.jqp-solved .jqp-controls span input {
+    background-color: #c2ffaf;
+    color: #444444;
+  }
+
+  #levelButtons {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+  }
+
+  .box {
+    display: inline-block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    border: 1px outset #000000;
+    background-color: #fff11b;
+    color: #000000;
+    font-size: 1.2rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #completed {
+    display: inline-block;
+    margin-left: 20px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    border: 1px outset #000000;
+    background-color: #8cec8c;
+    color: #000000;
+    font-size: 1.2rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  #smallTitle {
+    display: none;
+  }
+  #levelContainer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    margin-right: -180px;
+  }
+
+  #puzzleImage {
+    display: inline-block;
+    position: relative;
+    margin-left: 40px;
+  }
+  /*************************Image and level text*******************/
+  #messageContainer {
+    display: block;
+  }
+  #lvltext {
+    height: auto;
+    background-color: #fff;
+    padding: 12px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+    pointer-events: none;
+  }
+
+  #lvltext:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+    pointer-events: none;
+  }
+
+  .squirrel {
+    display: inline-block;
+    height: 120px;
+    pointer-events: none;
+    margin-top: 50px;
+  }
+
+  .elephant {
+    display: inline-block;
+    height: 120px;
+    margin-top: 50px;
+    margin-right: 13px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .crocodile {
+    display: inline-block;
+    height: 170px;
+    margin-top: 2px;
+    pointer-events: none;
+  }
+  /************************************************************************/
+
+  .jqPuzzle {
+    display: block;
+    top: 80px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    border: 1px solid #9a90ff;
+    background-color: #9a90ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    box-shadow: 0 -30px 0 -10px #9a90ff, 0 30px 0 -10px #9a90ff,
+      0 -60px 0 -20px #9a90ff, 0 60px 0 -20px #9a90ff, 0 -90px 0 -40px #9a90ff,
+      0 90px 0 -40px #9a90ff, 0 -120px 0 -60px #9a90ff, 0 120px 0 -60px #9a90ff,
+      -10px 0 0 0 #000000, 10px 0 0 0 #000000, 0 -20px 0 0 #000000,
+      0 20px 0 0 #000000, 0 -50px 0 -10px #000000, 0 50px 0 -10px #000000,
+      0 -70px 0 -20px #000000, 0 70px 0 -20px #000000, 0 -100px 0 -40px #000000,
+      0 100px 0 -40px #000000, 0 -130px 0 -60px #000000, 0 130px 0 -60px #000000;
+  }
+
+  /* only needed if external css rules set defaults for divs,
+   this rule only resets the most common properties */
+  .jqPuzzle div {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+  }
+
+  /* div wrapper which holds the puzzle pieces and the solution image */
+  .jqPuzzle .jqp-wrapper {
+    padding: 4px;
+    border: px solid #000000;
+    background-color: #6b6b6b;
+  }
+
+  /* a single puzzle piece */
+  .jqPuzzle .jqp-piece {
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 28px;
+  }
+
+  .jqPuzzle .jqp-piece:hover {
+    border-style: dashed;
+  }
+
+  .jqPuzzle.jqp-solved .jqp-piece:hover {
+    border-style: solid;
+  }
+
+  /* the controls area which holds the buttons and the display */
+  .jqPuzzle .jqp-controls {
+    float: left;
+  }
+
+  /* a button */
+  .jqPuzzle .jqp-controls a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 22px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    text-align: center;
+    border: 1px outset #000000;
+    background-color: #ff6b96;
+    color: #000000;
+    font-size: 14px;
+    line-height: normal;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  .jqPuzzle .jqp-controls a:hover {
+    background-color: #ffbdd0;
+    color: #000000;
+  }
+
+  /* toggle/down state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-toggle,
+  .jqPuzzle .jqp-controls a.jqp-down {
+    padding-left: 4px;
+    padding-right: 6px;
+    border-style: inset;
+    background-color: #ffdae5;
+  }
+
+  /* disabled state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-disabled {
+    background-color: #ddddee;
+    color: #ffffff;
+  }
+
+  /* the area which holds the moves/seconds display */
+  .jqPuzzle .jqp-controls span {
+    margin-top: 55px;
+    padding-left: 60px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* disabled state for the display (non-shuffled puzzle) */
+  .jqPuzzle .jqp-controls span.jqp-disabled {
+    color: #aaaaaa;
+  }
+
+  /* solved state for the display (non-shuffled puzzle) */
+  .jqPuzzle.jqp-solved .jqp-controls span {
+    padding: 1px 3px;
+    margin-left: 15%;
+    border: 1px dotted #0f8f08;
+    background-color: #9fef86;
+    color: #0f8f08;
+  }
+
+  /* a text field for the moves/seconds display */
+  .jqPuzzle .jqp-controls span input {
+    margin: 0px 3px;
+    padding: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  /* disabled state for the text fields */
+  .jqPuzzle .jqp-controls span.jqp-disabled input {
+    background-color: #eeeeff;
+    color: #aaaaaa;
+  }
+
+  /* solved state for the text fields */
+  .jqPuzzle.jqp-solved .jqp-controls span input {
+    background-color: #c2ffaf;
+    color: #444444;
+  }
+
+  #levelButtons {
+    position: absolute;
+    left: 28px;
+    top: 200px;
+  }
+
+  .box {
+    display: block;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    border: 1px outset #000000;
+    background-color: #fff11b;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #completed {
+    display: block;
+    margin-left: 2px;
+    margin-top: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 9px;
+    border: 1px outset #000000;
+    background-color: #8cec8c;
+    color: #000000;
+    font-size: 0.9rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 540px) {
+  #smallTitle {
+    display: none;
+  }
+  body {
+    background: #93eaff;
+  }
+  #levelContainer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    margin-right: -140px;
+  }
+
+  #puzzleImage {
+    display: inline-block;
+    position: relative;
+  }
+  /*************************Image and level text*******************/
+  #messageContainer {
+    display: block;
+  }
+  #lvltext {
+    height: auto;
+    background-color: #fff;
+    padding: 8px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+    pointer-events: none;
+    margin-bottom: 21px;
+    margin-top: 28px;
+  }
+
+  #lvltext:after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+    pointer-events: none;
+  }
+
+  .squirrel {
+    display: inline-block;
+    height: 120px;
+    pointer-events: none;
+    margin-top: 50px;
+    display: none;
+  }
+
+  .elephant {
+    display: inline-block;
+    height: 120px;
+    margin-top: 50px;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
+  .crocodile {
+    display: inline-block;
+    height: 270px;
+    margin-top: 280px;
+    pointer-events: none;
+    display: none;
+  }
+  /************************************************************************/
+
+  .jqPuzzle {
+    display: block;
+    top: 80px;
+    padding: 8px;
+    border: 1px solid #9a90ff;
+    background-color: #9a90ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    box-shadow: 0 -30px 0 -10px #9a90ff, 0 30px 0 -10px #9a90ff,
+      0 -60px 0 -20px #9a90ff, 0 60px 0 -20px #9a90ff, 0 -90px 0 -40px #9a90ff,
+      0 90px 0 -40px #9a90ff, 0 -120px 0 -60px #9a90ff, 0 120px 0 -60px #9a90ff,
+      -10px 0 0 0 #000000, 10px 0 0 0 #000000, 0 -20px 0 0 #000000,
+      0 20px 0 0 #000000, 0 -50px 0 -10px #000000, 0 50px 0 -10px #000000,
+      0 -70px 0 -20px #000000, 0 70px 0 -20px #000000, 0 -100px 0 -40px #000000,
+      0 100px 0 -40px #000000, 0 -130px 0 -60px #000000, 0 130px 0 -60px #000000;
+  }
+
+  /* only needed if external css rules set defaults for divs,
+   this rule only resets the most common properties */
+  .jqPuzzle div {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+  }
+
+  /* div wrapper which holds the puzzle pieces and the solution image */
+  .jqPuzzle .jqp-wrapper {
+    padding: 4px;
+    border: px solid #000000;
+    background-color: #6b6b6b;
+  }
+
+  /* a single puzzle piece */
+  .jqPuzzle .jqp-piece {
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 28px;
+  }
+
+  .jqPuzzle .jqp-piece:hover {
+    border-style: dashed;
+  }
+
+  .jqPuzzle.jqp-solved .jqp-piece:hover {
+    border-style: solid;
+  }
+
+  /* the controls area which holds the buttons and the display */
+  .jqPuzzle .jqp-controls {
+    float: left;
+  }
+
+  /* a button */
+  .jqPuzzle .jqp-controls a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 22px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    border: 1px outset #000000;
+    background-color: #ff6b96;
+    color: #000000;
+    font-size: 14px;
+    line-height: normal;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  .jqPuzzle .jqp-controls a:hover {
+    background-color: #ffbdd0;
+    color: #000000;
+  }
+
+  /* toggle/down state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-toggle,
+  .jqPuzzle .jqp-controls a.jqp-down {
+    padding-left: 4px;
+    padding-right: 6px;
+    border-style: inset;
+    background-color: #ffdae5;
+  }
+
+  /* disabled state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-disabled {
+    background-color: #ddddee;
+    color: #ffffff;
+  }
+
+  /* the area which holds the moves/seconds display */
+  .jqPuzzle .jqp-controls span {
+    margin-top: 55px;
+    padding-left: 60px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* disabled state for the display (non-shuffled puzzle) */
+  .jqPuzzle .jqp-controls span.jqp-disabled {
+    color: #aaaaaa;
+  }
+
+  /* solved state for the display (non-shuffled puzzle) */
+  .jqPuzzle.jqp-solved .jqp-controls span {
+    padding: 1px 3px;
+    margin-left: 15%;
+    border: 1px dotted #0f8f08;
+    background-color: #9fef86;
+    color: #0f8f08;
+  }
+
+  /* a text field for the moves/seconds display */
+  .jqPuzzle .jqp-controls span input {
+    margin: 0px 3px;
+    padding: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  /* disabled state for the text fields */
+  .jqPuzzle .jqp-controls span.jqp-disabled input {
+    background-color: #eeeeff;
+    color: #aaaaaa;
+  }
+
+  /* solved state for the text fields */
+  .jqPuzzle.jqp-solved .jqp-controls span input {
+    background-color: #c2ffaf;
+    color: #444444;
+  }
+
+  #levelButtons {
+    position: absolute;
+    left: 27px;
+    top: 200px;
+  }
+
+  .box {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    border: 1px outset #000000;
+    background-color: #fff11b;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #completed {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: -100px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px outset #000000;
+    background-color: #8cec8c;
+    color: #000000;
+    font-size: 0.7rem;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #canvas {
+    display: none;
+  }
+}
+@media screen and (max-width: 539px) and (min-width: 321px) {
+  body {
+    background: #93eaff;
+  }
+  #levelContainer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    margin-right: -75px;
+  }
+
+  #puzzleImage {
+    display: inline-block;
+    position: relative;
+  }
+  /*************************Image and level text*******************/
+  #messageContainer {
+    display: none;
+  }
+
+  #smallTitle {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color: #000000;
+  }
+  #lvltext {
+    display: none;
+    height: auto;
+    background-color: #fff;
+    padding: 8px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+    pointer-events: none;
+    margin-bottom: 18px;
+    margin-top: 28px;
+  }
+
+  #lvltext:after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+    pointer-events: none;
+  }
+
+  .squirrel {
+    display: inline-block;
+    height: 120px;
+    pointer-events: none;
+    margin-top: 50px;
+    display: none;
+  }
+
+  .elephant {
+    display: inline-block;
+    height: 120px;
+    margin-top: 50px;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
+  .crocodile {
+    display: inline-block;
+    height: 270px;
+    margin-top: 280px;
+    pointer-events: none;
+    display: none;
+  }
+  /************************************************************************/
+
+  .jqPuzzle {
+    top: 220px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 13px;
+    border: 1px solid #9a90ff;
+    background-color: #9a90ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    box-shadow: 0 -30px 0 -10px #9a90ff, 0 30px 0 -10px #9a90ff,
+      0 -60px 0 -20px #9a90ff, 0 60px 0 -20px #9a90ff, 0 -90px 0 -40px #9a90ff,
+      0 90px 0 -40px #9a90ff, 0 -120px 0 -60px #9a90ff, 0 120px 0 -60px #9a90ff,
+      -10px 0 0 0 #000000, 10px 0 0 0 #000000, 0 -20px 0 0 #000000,
+      0 20px 0 0 #000000, 0 -50px 0 -10px #000000, 0 50px 0 -10px #000000,
+      0 -70px 0 -20px #000000, 0 70px 0 -20px #000000, 0 -100px 0 -40px #000000,
+      0 100px 0 -40px #000000, 0 -130px 0 -60px #000000, 0 130px 0 -60px #000000;
+  }
+
+  /* only needed if external css rules set defaults for divs,
+   this rule only resets the most common properties */
+  .jqPuzzle div {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+  }
+
+  /* div wrapper which holds the puzzle pieces and the solution image */
+  .jqPuzzle .jqp-wrapper {
+    padding: 4px;
+    border: px solid #000000;
+    background-color: #6b6b6b;
+  }
+
+  /* a single puzzle piece */
+  .jqPuzzle .jqp-piece {
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 28px;
+  }
+
+  .jqPuzzle .jqp-piece:hover {
+    border-style: dashed;
+  }
+
+  .jqPuzzle.jqp-solved .jqp-piece:hover {
+    border-style: solid;
+  }
+
+  /* the controls area which holds the buttons and the display */
+  .jqPuzzle .jqp-controls {
+    float: left;
+  }
+
+  /* a button */
+  .jqPuzzle .jqp-controls a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 44px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    text-align: center;
+    border: 1px outset #000000;
+    background-color: #ff6b96;
+    color: #000000;
+    font-size: 10px;
+    line-height: normal;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  .jqPuzzle .jqp-controls a:hover {
+    background-color: #ffbdd0;
+    color: #000000;
+  }
+
+  /* toggle/down state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-toggle,
+  .jqPuzzle .jqp-controls a.jqp-down {
+    padding-left: 4px;
+    padding-right: 6px;
+    border-style: inset;
+    background-color: #ffdae5;
+  }
+
+  /* disabled state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-disabled {
+    background-color: #ddddee;
+    color: #ffffff;
+  }
+
+  /* the area which holds the moves/seconds display */
+  .jqPuzzle .jqp-controls span {
+    margin-top: 35px;
+    padding-left: 60px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 13px;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* disabled state for the display (non-shuffled puzzle) */
+  .jqPuzzle .jqp-controls span.jqp-disabled {
+    color: #aaaaaa;
+  }
+
+  /* solved state for the display (non-shuffled puzzle) */
+  .jqPuzzle.jqp-solved .jqp-controls span {
+    padding: 1px 3px;
+    margin-left: 15%;
+    border: 1px dotted #0f8f08;
+    background-color: #9fef86;
+    color: #0f8f08;
+  }
+
+  /* a text field for the moves/seconds display */
+  .jqPuzzle .jqp-controls span input {
+    margin: 0px 3px;
+    padding: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  /* disabled state for the text fields */
+  .jqPuzzle .jqp-controls span.jqp-disabled input {
+    background-color: #eeeeff;
+    color: #aaaaaa;
+  }
+
+  /* solved state for the text fields */
+  .jqPuzzle.jqp-solved .jqp-controls span input {
+    background-color: #c2ffaf;
+    color: #444444;
+  }
+
+  #levelButtons {
+    position: absolute;
+    left: 125px;
+    top: 762px;
+  }
+
+  .box {
+    position: absolute;
+    margin-left: 38px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 6px;
+    border: 1px outset #000000;
+    background-color: #fff11b;
+    color: #000000;
+    font-size: 0.7em;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #completed {
+    position: absolute;
+    margin-top: -650px;
+    margin-left: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px outset #000000;
+    background-color: #8cec8c;
+    color: #000000;
+    font-size: 0.7em;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #canvas {
+    display: none;
+  }
+}
+@media screen and (max-width: 320px) {
+  body {
+    background: #93eaff;
+  }
+  #levelContainer {
+    left: 0;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    margin-right: -75px;
+  }
+
+  #puzzleImage {
+    display: inline-block;
+    position: relative;
+  }
+  /*************************Image and level text*******************/
+  #messageContainer {
+    display: none;
+  }
+
+  #smallTitle {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    color: #000000;
+  }
+  #lvltext {
+    display: none;
+    height: auto;
+    background-color: #fff;
+    padding: 8px;
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: 0 -10px 0 #fff, 0 -20px 0 #000, -10px 0 0 #fff, -20px 0 0 #000,
+      0 10px 0 #fff, 0 20px 0 #000, 10px 0 0 #fff, 20px 0 0 #000,
+      -10px -10px 0 #000, 10px 10px 0 #000, -10px 10px 0 #000, 10px -10px 0 #000;
+    pointer-events: none;
+    margin-bottom: 18px;
+    margin-top: 28px;
+  }
+
+  #lvltext:after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 10px;
+    height: 10px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    box-shadow: 10px 0 0 #fff, 20px 0 0 #fff, 30px 0 0 #fff, 40px 0 0 #fff,
+      50px 0 0 #fff, -10px 10px 0 #000, 0px 10px 0 #fff, 10px 10px 0 #fff,
+      20px 10px 0 #fff, 30px 10px 0 #fff, 40px 10px 0 #fff, 50px 10px 0 #000,
+      -30px 20px 0 #000, -20px 20px 0 #000, -10px 20px 0 #fff, 0px 20px 0 #fff,
+      10px 20px 0 #fff, 20px 20px 0 #fff, 30px 20px 0 #000, 40px 20px 0 #000,
+      -40px 30px 0 #000, -30px 30px 0 #fff, -20px 30px 0 #fff, -10px 30px 0 #fff,
+      0px 30px 0 #fff, 10px 30px 0 #000, 20px 30px 0 #000, -40px 40px 0 #000,
+      -30px 40px 0 #000, -20px 40px 0 #000, -10px 40px 0 #000, 0px 40px 0 #000;
+    pointer-events: none;
+  }
+
+  .squirrel {
+    display: inline-block;
+    height: 120px;
+    pointer-events: none;
+    margin-top: 50px;
+    display: none;
+  }
+
+  .elephant {
+    display: inline-block;
+    height: 120px;
+    margin-top: 50px;
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+
+  .crocodile {
+    display: inline-block;
+    height: 270px;
+    margin-top: 280px;
+    pointer-events: none;
+    display: none;
+  }
+  /************************************************************************/
+
+  .jqPuzzle {
+    top: 220px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 13px;
+    border: 1px solid #9a90ff;
+    background-color: #9a90ff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    box-shadow: 0 -30px 0 -10px #9a90ff, 0 30px 0 -10px #9a90ff,
+      0 -60px 0 -20px #9a90ff, 0 60px 0 -20px #9a90ff, 0 -90px 0 -40px #9a90ff,
+      0 90px 0 -40px #9a90ff, 0 -120px 0 -60px #9a90ff, 0 120px 0 -60px #9a90ff,
+      -10px 0 0 0 #000000, 10px 0 0 0 #000000, 0 -20px 0 0 #000000,
+      0 20px 0 0 #000000, 0 -50px 0 -10px #000000, 0 50px 0 -10px #000000,
+      0 -70px 0 -20px #000000, 0 70px 0 -20px #000000, 0 -100px 0 -40px #000000,
+      0 100px 0 -40px #000000, 0 -130px 0 -60px #000000, 0 130px 0 -60px #000000;
+  }
+
+  /* only needed if external css rules set defaults for divs,
+   this rule only resets the most common properties */
+  .jqPuzzle div {
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+  }
+
+  /* div wrapper which holds the puzzle pieces and the solution image */
+  .jqPuzzle .jqp-wrapper {
+    padding: 4px;
+    border: px solid #000000;
+    background-color: #6b6b6b;
+  }
+
+  /* a single puzzle piece */
+  .jqPuzzle .jqp-piece {
+    border: 2px solid #000000;
+    color: #ffffff;
+    font-size: 28px;
+  }
+
+  .jqPuzzle .jqp-piece:hover {
+    border-style: dashed;
+  }
+
+  .jqPuzzle.jqp-solved .jqp-piece:hover {
+    border-style: solid;
+  }
+
+  /* the controls area which holds the buttons and the display */
+  .jqPuzzle .jqp-controls {
+    float: left;
+  }
+
+  /* a button */
+  .jqPuzzle .jqp-controls a {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 44px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    text-align: center;
+    border: 1px outset #000000;
+    background-color: #ff6b96;
+    color: #000000;
+    font-size: 10px;
+    line-height: normal;
+    font-family: "Press Start 2P", cursive;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  .jqPuzzle .jqp-controls a:hover {
+    background-color: #ffbdd0;
+    color: #000000;
+  }
+
+  /* toggle/down state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-toggle,
+  .jqPuzzle .jqp-controls a.jqp-down {
+    padding-left: 4px;
+    padding-right: 6px;
+    border-style: inset;
+    background-color: #ffdae5;
+  }
+
+  /* disabled state for buttons */
+  .jqPuzzle .jqp-controls a.jqp-disabled {
+    background-color: #ddddee;
+    color: #ffffff;
+  }
+
+  /* the area which holds the moves/seconds display */
+  .jqPuzzle .jqp-controls span {
+    margin-top: 35px;
+    padding-left: 60px;
+    border: none;
+    background-color: transparent;
+    color: #000000;
+    font-size: 13px;
+    font-family: "Press Start 2P", cursive;
+  }
+
+  /* disabled state for the display (non-shuffled puzzle) */
+  .jqPuzzle .jqp-controls span.jqp-disabled {
+    color: #aaaaaa;
+  }
+
+  /* solved state for the display (non-shuffled puzzle) */
+  .jqPuzzle.jqp-solved .jqp-controls span {
+    padding: 1px 3px;
+    margin-left: 15%;
+    border: 1px dotted #0f8f08;
+    background-color: #9fef86;
+    color: #0f8f08;
+  }
+
+  /* a text field for the moves/seconds display */
+  .jqPuzzle .jqp-controls span input {
+    margin: 0px 3px;
+    padding: 3px;
+    padding-bottom: 2px;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+    box-shadow: -5px 0 0 0 #000000, 5px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000, 0 -50px 0 -20px #000000, 0 50px 0 -20px #000000;
+  }
+
+  /* disabled state for the text fields */
+  .jqPuzzle .jqp-controls span.jqp-disabled input {
+    background-color: #eeeeff;
+    color: #aaaaaa;
+  }
+
+  /* solved state for the text fields */
+  .jqPuzzle.jqp-solved .jqp-controls span input {
+    background-color: #c2ffaf;
+    color: #444444;
+  }
+
+  #levelButtons {
+    position: absolute;
+    left: 125px;
+    top: 762px;
+  }
+
+  .box {
+    position: absolute;
+    margin-left: 38px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 6px;
+    border: 1px outset #000000;
+    background-color: #fff11b;
+    color: #000000;
+    font-size: 0.7em;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #completed {
+    position: absolute;
+    margin-top: -650px;
+    margin-left: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px outset #000000;
+    background-color: #8cec8c;
+    color: #000000;
+    font-size: 0.7em;
+    box-shadow: -7px 0 0 0 #000000, 7px 0 0 0 #000000, 0 -8px 0 -2px #000000,
+      0 8px 0 -2px #000000;
+  }
+  #canvas {
+    display: none;
+  }
+}
